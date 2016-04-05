@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDSTP.Domain", "DDSTP.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDSTP.Test", "DDSTP.Test\DDSTP.Test.csproj", "{717740EF-CBF9-4E36-BCF4-EF7B475039B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDSTP.Data", "DDSTP.Data\DDSTP.Data.csproj", "{49CD4329-1EFA-4E4F-BA93-4A61C13976A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDSTP.IntegrationTest", "DDSTP.IntegrationTest\DDSTP.IntegrationTest.csproj", "{191FB039-0EB2-4A8F-BBFD-2F16DD7E2D93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{717740EF-CBF9-4E36-BCF4-EF7B475039B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{717740EF-CBF9-4E36-BCF4-EF7B475039B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{717740EF-CBF9-4E36-BCF4-EF7B475039B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49CD4329-1EFA-4E4F-BA93-4A61C13976A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49CD4329-1EFA-4E4F-BA93-4A61C13976A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49CD4329-1EFA-4E4F-BA93-4A61C13976A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49CD4329-1EFA-4E4F-BA93-4A61C13976A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191FB039-0EB2-4A8F-BBFD-2F16DD7E2D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191FB039-0EB2-4A8F-BBFD-2F16DD7E2D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191FB039-0EB2-4A8F-BBFD-2F16DD7E2D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191FB039-0EB2-4A8F-BBFD-2F16DD7E2D93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

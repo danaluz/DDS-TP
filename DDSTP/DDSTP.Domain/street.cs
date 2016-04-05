@@ -7,5 +7,6 @@ namespace DDSTP.Domain
 {
     public class Street
     {
+        public int ID { get; set; }
     }
 }
