@@ -16,7 +16,29 @@ namespace DDSTP.Data
         public dbDDSTPContext()
             : base("dbDDSTPContext")
         {
-            Database.SetInitializer<dbDDSTPContext>(new DropCreateDatabaseIfModelChanges<dbDDSTPContext>());
+                        
+            Database.SetInitializer(new EntitiesContextInitializer());
+
+            //Database.SetInitializer<dbMerchantOnBoard>(new DropCreateDatabaseIfModelChanges<dbMerchantOnBoard>()););
+
+            //Database.SetInitializer<dbMerchantOnBoard>(new CreateDatabaseIfNotExists<dbMerchantOnBoard>());
+
+            //Database.SetInitializer<dbMerchantOnBoard>(new DropCreateDatabaseAlways<dbMerchantOnBoard>());
+        }
+
+
+        public class EntitiesContextInitializer : DropCreateDatabaseIfModelChanges<dbDDSTPContext>
+        {
+            protected override void Seed(dbDDSTPContext context)
+            {
+                var street = new Street();
+                street.Nombre="Scalabrini Ortiz";
+                street.ID = 1;
+                context.Streets.Add(street);
+                context.SaveChanges();
+
+
+            }
         }
     }
 }

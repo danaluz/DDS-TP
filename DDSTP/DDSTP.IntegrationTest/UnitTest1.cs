@@ -19,6 +19,7 @@ namespace DDSTP.IntegrationTest
             poi1.Name="Prueba1";
             poi1.Number=15;
             poi1.Type= TypeOfPOI.Bank;
+            poi1.MainStreet = dbContext.Streets.Find(1);
 
             dbContext.POIs.Add(poi1);
             dbContext.SaveChanges();
