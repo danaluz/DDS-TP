@@ -25,10 +25,6 @@ namespace DDSTP.Test
             Assert.IsTrue(result);
 
         }
-
-
-
-
-
+        
     }
 }
