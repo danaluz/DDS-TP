@@ -14,9 +14,16 @@ namespace DDSTP.Domain
        {
            this.distanceLessThan = distanceLessThan;
        }
-        public bool AreNear(POI x, POI y)
+        public bool AreNear(IPOI x, IPOI y)
         {
             var dist = distance(x.Latitude, x.Longitude, y.Latitude, y.Longitude);
+
+            return dist < distanceLessThan;
+        }
+
+        public bool AreNear(IPOI x, double lat, double lon)
+        {
+            var dist = distance(x.Latitude, x.Longitude, lat, lon);
 
             return dist < distanceLessThan;
         }
