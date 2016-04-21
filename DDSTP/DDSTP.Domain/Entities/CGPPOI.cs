@@ -10,6 +10,11 @@ namespace DDSTP.Domain
 {
     public class CGPPOI : IPOI
     {
+        public CGPPOI()
+        {
+            this.Services = new List<Service>();
+        }
+
         [Key]
         public int ID { get; set; }
         public float Latitude { get; set; }
@@ -32,7 +37,38 @@ namespace DDSTP.Domain
 
         public bool IsAvailable()
         {
-            throw new NotImplementedException();
+            var nowTime = DateTime.Now.TimeOfDay;
+            var nowDay = DateTime.Now.DayOfWeek;
+
+            var result = this.Services.Any(y=>y.Availabilities.Any
+                                      (x => nowTime >= x.OpenTime &&
+                                      nowTime < x.CloseTime &&
+                                      x.Day == nowDay));
+            return result;
+        }
+
+        public bool IsAvailable(Service service)
+        {
+            var nowTime = DateTime.Now.TimeOfDay;
+            var nowDay = DateTime.Now.DayOfWeek;
+            
+            var result = this.Services.Any(y => y.ServiceName==service.ServiceName && y.Availabilities.Any
+                                      (x => nowTime >= x.OpenTime &&
+                                      nowTime < x.CloseTime &&
+                                      x.Day == nowDay));
+            return result;
+        }
+
+        public bool IsAvailable(string service)
+        {
+            var nowTime = DateTime.Now.TimeOfDay;
+            var nowDay = DateTime.Now.DayOfWeek;
+
+            var result = this.Services.Any(y => y.ServiceName == service && y.Availabilities.Any
+                                      (x => nowTime >= x.OpenTime &&
+                                      nowTime < x.CloseTime &&
+                                      x.Day == nowDay));
+            return result;
         }
     }
 }

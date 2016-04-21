@@ -53,15 +53,13 @@ namespace DDSTP.Test
             var av1 = new Availability();
             av1.OpenTime= new TimeSpan(0,0,0);
             av1.CloseTime = new TimeSpan(7, 0, 0);
-            av1.Day= DayOfWeek.Wednesday;
+            av1.Day = DayOfWeek.Thursday;
 
             var poi1 = new ShopPOI();
             poi1.Latitude = -34.581828f;
             poi1.Longitude = -58.412723f;
             poi1.Category = rubro;
-            var lista = new List<Availability>();
-            lista.Add(av1);
-            poi1.Availabilities = lista;
+            poi1.Availabilities.Add(av1);
 
 
             var result = poi1.IsAvailable();
@@ -69,11 +67,34 @@ namespace DDSTP.Test
             Assert.IsTrue(result);
 
         }
+
         [TestMethod]
         public void AvaibilityBusStopOI()
         {
             var poi1 = new BusStopPOI();
             var result = poi1.IsAvailable();
+
+            Assert.IsTrue(result);
+
+        }
+
+        [TestMethod]
+        public void AvaibilityCGPPOI()
+        {
+            var av1 = new Availability();
+            av1.OpenTime = new TimeSpan(0, 0, 0);
+            av1.CloseTime = new TimeSpan(7, 0, 0);
+            av1.Day = DayOfWeek.Thursday;
+
+            var service1 = new Service();
+            service1.ServiceName = "asesoramiento";
+            service1.ID = 1;
+            service1.Availabilities.Add(av1);
+            
+            var poi1 = new CGPPOI();
+            poi1.Services.Add(service1);
+
+            var result = poi1.IsAvailable("asesoramiento");
 
             Assert.IsTrue(result);
 

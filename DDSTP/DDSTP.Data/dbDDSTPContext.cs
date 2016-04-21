@@ -5,12 +5,16 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DDSTP.Domain.Entities;
 
 namespace DDSTP.Data
 {
     public class dbDDSTPContext : DbContext 
     {
-        public DbSet<POI> POIs { get; set; }
+        public DbSet<IPOI> POIs { get; set; }
+        public DbSet<Availability> Availabilities { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Service> Services { get; set; }
         public DbSet<Street> Streets { get; set; }
 
         public dbDDSTPContext()

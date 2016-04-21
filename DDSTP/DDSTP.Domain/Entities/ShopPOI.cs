@@ -10,6 +10,11 @@ namespace DDSTP.Domain
 {
     public class ShopPOI : IPOI
     {
+        public ShopPOI()
+        {
+            this.Availabilities = new List<Availability>();
+        }
+
         [Key]
         public int ID { get; set; }
         public float Latitude { get; set; }
