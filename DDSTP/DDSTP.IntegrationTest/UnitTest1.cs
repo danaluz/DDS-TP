@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DDSTP.Data;
 using DDSTP.Domain;
+using DDSTP.Repositories;
 
 namespace DDSTP.IntegrationTest
 {
@@ -13,16 +14,13 @@ namespace DDSTP.IntegrationTest
         public void TestMethod1()
         {
             var dbContext = new dbDDSTPContext();
-            var poi1 = new POI();
-            poi1.Latitude = -34.581828f;
-            poi1.Longitude = -58.412723f;
-            poi1.Name="Prueba1";
-            poi1.Number=15;
-            poi1.Type= TypeOfPOI.Bank;
-            poi1.MainStreet = dbContext.Streets.Find(1);
 
-            dbContext.POIs.Add(poi1);
-            dbContext.SaveChanges();
+            var repo = new POIRepository(dbContext);
+
+            var result = repo.Search("Santander");
+
+            Assert.IsTrue(result.Count==1);
+
 
         }
     }

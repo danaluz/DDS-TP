@@ -8,36 +8,30 @@ using DDSTP.Domain.Entities;
 
 namespace DDSTP.Domain
 {
-    public class ShopPOI : IPOI
+    public class ShopPOI : POI
     {
         public ShopPOI()
         {
             this.Availabilities = new List<Availability>();
         }
 
-        [Key]
-        public int ID { get; set; }
-        public float Latitude { get; set; }
-        public float Longitude { get; set; }
-        public string Name { get; set; }
-        public virtual Street MainStreet { get; set; }
-        public int? Number { get; set; }
+
         public virtual Category Category { get; set; }
         public virtual List<Availability> Availabilities { get; set; }
 
-        public TypeOfPOI Type
+        public override TypeOfPOI Type
         {
             get { return TypeOfPOI.Shop; }
 
         }
 
-        public bool IsNear(double lat, double lon)
+        public override bool IsNear(double lat, double lon)
         {
             var comparer = new POIComparer(this.Category.DistanceLess);
             return comparer.AreNear(this, lat, lon);
         }
 
-        public bool IsAvailable()
+        public override bool IsAvailable()
         {
             var nowTime = DateTime.Now.TimeOfDay;
             var nowDay = DateTime.Now.DayOfWeek;

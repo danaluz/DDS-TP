@@ -14,14 +14,14 @@ namespace DDSTP.Domain
        {
            this.distanceLessThan = distanceLessThan;
        }
-        public bool AreNear(IPOI x, IPOI y)
+        public bool AreNear(POI x, POI y)
         {
             var dist = distance(x.Latitude, x.Longitude, y.Latitude, y.Longitude);
 
             return dist < distanceLessThan;
         }
 
-        public bool AreNear(IPOI x, double lat, double lon)
+        public bool AreNear(POI x, double lat, double lon)
         {
             var dist = distance(x.Latitude, x.Longitude, lat, lon);
 

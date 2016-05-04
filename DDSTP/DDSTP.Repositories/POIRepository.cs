@@ -17,9 +17,12 @@ namespace DDSTP.Repositories
 
         private dbDDSTPContext context;
 
-        public List<IPOI> Search(string filtro)
+        public List<POI> Search(string filtro)
         {
-            var result = from x in context ;
+            var result = (from x in context.POIs
+                         where x.Name.Contains(filtro)
+                         select x).ToList();
+            return result;
 
         }
 

@@ -8,34 +8,28 @@ using DDSTP.Domain.Entities;
 
 namespace DDSTP.Domain
 {
-    public class CGPPOI : IPOI
+    public class CGPPOI : POI
     {
         public CGPPOI()
         {
             this.Services = new List<Service>();
         }
+            
 
-        [Key]
-        public int ID { get; set; }
-        public float Latitude { get; set; }
-        public float Longitude { get; set; }
-        public string Name { get; set; }
-        public virtual Street MainStreet { get; set; }
-        public int? Number { get; set; }
         public List<Service> Services { get; set; }
 
-        public TypeOfPOI Type
+        public override TypeOfPOI Type
         {
             get { return TypeOfPOI.CGP;}
             
         }
 
-        public bool IsNear(double lat, double lon)
+        public override bool IsNear(double lat, double lon)
         {
             throw new NotImplementedException();
         }
 
-        public bool IsAvailable()
+        public override bool IsAvailable()
         {
             var nowTime = DateTime.Now.TimeOfDay;
             var nowDay = DateTime.Now.DayOfWeek;

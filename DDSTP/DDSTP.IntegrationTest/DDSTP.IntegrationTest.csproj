@@ -71,6 +71,10 @@
       <Project>{35cc10ee-6707-4855-937f-a65d3931c075}</Project>
       <Name>DDSTP.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DDSTP.Repositories\DDSTP.Repositories.csproj">
+      <Project>{33B498F7-C10F-4E45-A3B1-052A5C6D9E7A}</Project>
+      <Name>DDSTP.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -46,7 +46,7 @@
     <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\ShopPOI.cs" />
     <Compile Include="Entities\CGPPOI.cs" />
-    <Compile Include="Entities\IPOI.cs" />
+    <Compile Include="Entities\POI.cs" />
     <Compile Include="Entities\BusStopPOI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\POIComparer.cs" />
