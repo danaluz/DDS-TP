@@ -61,8 +61,13 @@
   <ItemGroup>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestApiService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DDSTP.APIService\DDSTP.APIService.csproj">
+      <Project>{A14DCCFC-87B8-453B-83A1-29F8F90CE6EC}</Project>
+      <Name>DDSTP.APIService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DDSTP.Data\DDSTP.Data.csproj">
       <Project>{49cd4329-1efa-4e4f-ba93-4a61c13976a5}</Project>
       <Name>DDSTP.Data</Name>

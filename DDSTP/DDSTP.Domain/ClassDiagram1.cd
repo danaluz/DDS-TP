@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DDSTP.Domain.Entities.Availability" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAgAAAAgAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Entities\Availability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDSTP.Domain.Entities.Category" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDSTP.Domain.Entities.Service" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Entities\Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDSTP.Domain.BankPOI">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAEAAAAAAAAAAAAQEAAIAAAAA=</HashCode>
+      <FileName>Entities\BankPOI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDSTP.Domain.BusStopPOI">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAEIAAAAAAAAAAAQAAAIAAAAA=</HashCode>
+      <FileName>Entities\BusStopPOI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDSTP.Domain.CGPPOI" Collapsed="true">
+    <Position X="7.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAQAAAIAAAAA=</HashCode>
+      <FileName>Entities\CGPPOI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDSTP.Domain.POI">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAgAAEAEAIEAQAAAAAAAAAAQAAAIAAAAA=</HashCode>
+      <FileName>Entities\POI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDSTP.Domain.ShopPOI">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAEAAAAAAAAAAAAQAAAIAACAA=</HashCode>
+      <FileName>Entities\ShopPOI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDSTP.Domain.Street" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Street.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="DDSTP.Domain.TypeOfPOI" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Enums\TypeOfPOI.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

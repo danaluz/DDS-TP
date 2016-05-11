@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.Spatial;
 
 namespace DDSTP.Domain
 {
@@ -6,8 +7,7 @@ namespace DDSTP.Domain
     {
         [Key]
         public int ID { get; set; }
-        public float Latitude { get; set; }
-        public float Longitude { get; set; }
+        public DbGeography Geolocation { get; set; }
         public string Name { get; set; }
         public virtual Street MainStreet { get; set; }
         public int? Number { get; set; }

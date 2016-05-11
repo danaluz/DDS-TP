@@ -5,6 +5,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DDSTP.APIService;
+using DDSTP.Domain.Components;
 using DDSTP.Domain.Entities;
 
 namespace DDSTP.Data
@@ -16,6 +18,7 @@ namespace DDSTP.Data
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Street> Streets { get; set; }
+        public virtual DbSet<Community> Communities { get; set; }
 
         public dbDDSTPContext()
             : base("dbDDSTPContext")
@@ -59,8 +62,7 @@ namespace DDSTP.Data
                 av2.Day= DayOfWeek.Monday;
 
                 var bank1 = new BankPOI();
-                bank1.Latitude = -34.581828f; 
-                bank1.Longitude = -58.412723f; 
+                bank1.Geolocation = GeoHelper.PointFromLatLng(-34.581828f, -58.412723f);
                 bank1.MainStreet = street;
                 bank1.Number = 3669;
                 bank1.Name = "Banco Santander Río";
@@ -68,7 +70,24 @@ namespace DDSTP.Data
                 context.SaveChanges();
 
 
+                var serviceAPI = new CommunityService();
+                var communities = serviceAPI.GetAllCommunities();
+                foreach (var c in communities)
+                {
+                    var dbcommunity = new Community();
 
+                    var polygonLimits = c.GeoJson.GetPolygonLimits()
+                                        .Select(x => new DDSTP.Domain.Components.Point()
+                                        {
+                                            Longitude = x.Longitude,
+                                            Latitude = x.Latitude
+                                        }).ToList();
+
+                    dbcommunity.Polygon = GeoHelper.PolygonFromLatLng(polygonLimits);
+                    dbcommunity.CommunityNumber = c.CommunityNumber;
+                    context.Communities.Add(dbcommunity);
+                    context.SaveChanges();
+                }
 
             }
         }

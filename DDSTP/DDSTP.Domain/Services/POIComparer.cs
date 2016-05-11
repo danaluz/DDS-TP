@@ -16,14 +16,14 @@ namespace DDSTP.Domain
        }
         public bool AreNear(POI x, POI y)
         {
-            var dist = distance(x.Latitude, x.Longitude, y.Latitude, y.Longitude);
+            var dist = distance(x.Geolocation.Latitude.GetValueOrDefault(0), x.Geolocation.Longitude.GetValueOrDefault(0), y.Geolocation.Latitude.GetValueOrDefault(0), y.Geolocation.Longitude.GetValueOrDefault(0));
 
             return dist < distanceLessThan;
         }
 
         public bool AreNear(POI x, double lat, double lon)
         {
-            var dist = distance(x.Latitude, x.Longitude, lat, lon);
+            var dist = distance(x.Geolocation.Latitude.GetValueOrDefault(0), x.Geolocation.Longitude.GetValueOrDefault(0), lat, lon);
 
             return dist < distanceLessThan;
         }

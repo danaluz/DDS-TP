@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DDSTP.Domain;
+using DDSTP.Domain.Components;
 using DDSTP.Domain.Entities;
 
 
@@ -11,17 +12,16 @@ namespace DDSTP.Test
     public class POITests
     {
         [TestMethod]
-        public void POIComparerBankPOI()
+        public void POIComparerBankPOI_IsNotNear()
         {
             var poi1 = new BankPOI();
-            poi1.Latitude = -34.581828f;
-            poi1.Longitude = -58.412723f;
+            poi1.Geolocation = GeoHelper.PointFromLatLng(-34.581828f, -58.412723f);
 
             var result = poi1.IsNear(-34.581475f, -58.420244f);
             //var comparador = new POIComparer(700);
             //var result = comparador.AreNear(poi1, -34.581475f, -58.420244f);
 
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
 
         }
 
@@ -32,8 +32,7 @@ namespace DDSTP.Test
             rubro.DistanceLess = 800;
 
             var poi1 = new ShopPOI();
-            poi1.Latitude = -34.581828f;
-            poi1.Longitude = -58.412723f;
+            poi1.Geolocation = GeoHelper.PointFromLatLng(-34.581828f, -58.412723f);
             poi1.Category = rubro;
 
             var result = poi1.IsNear(-34.581475f, -58.420244f);
@@ -56,8 +55,7 @@ namespace DDSTP.Test
             av1.Day = DayOfWeek.Thursday;
 
             var poi1 = new ShopPOI();
-            poi1.Latitude = -34.581828f;
-            poi1.Longitude = -58.412723f;
+            poi1.Geolocation = GeoHelper.PointFromLatLng(-34.581828f,-58.412723f);
             poi1.Category = rubro;
             poi1.Availabilities.Add(av1);
 
@@ -83,8 +81,8 @@ namespace DDSTP.Test
         {
             var av1 = new Availability();
             av1.OpenTime = new TimeSpan(0, 0, 0);
-            av1.CloseTime = new TimeSpan(7, 0, 0);
-            av1.Day = DayOfWeek.Thursday;
+            av1.CloseTime = new TimeSpan(24, 0, 0);
+            av1.Day = DayOfWeek.Tuesday;
 
             var service1 = new Service();
             service1.ServiceName = "asesoramiento";
@@ -96,6 +94,7 @@ namespace DDSTP.Test
 
             var result = poi1.IsAvailable("asesoramiento");
 
+            //ojo con los horarois de open y close, dependiendo el momento del test
             Assert.IsTrue(result);
 
         }
