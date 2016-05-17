@@ -59,9 +59,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="SearchTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestApiService.cs" />
+    <Compile Include="IsNearTests.cs" />
+    <Compile Include="AvabilitiyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDSTP.APIService\DDSTP.APIService.csproj">

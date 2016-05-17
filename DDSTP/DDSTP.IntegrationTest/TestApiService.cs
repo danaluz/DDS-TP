@@ -8,12 +8,12 @@ namespace DDSTP.IntegrationTest
     public class TestApiService
     {
         [TestMethod]
-        public void GetAllCommunities_Should_Return_15_Records()
+        public void GetAllCommunities_Should_Return_2_Records()
         {
             var communities = new CommunityService();
             var result = communities.GetAllCommunities();
 
-            Assert.IsTrue(result.Count ==15);
+            Assert.IsTrue(result.Count == 2);
 
         }
     }

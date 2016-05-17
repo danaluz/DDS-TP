@@ -9,7 +9,7 @@ namespace DDSTP.Domain.Entities
     public class Service
     {
         [Key]
-        public int  ID { get; set; }
+        public int ID { get; set; }
         public Service()
         {
             this.Availabilities = new List<Availability>();

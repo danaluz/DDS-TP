@@ -25,23 +25,8 @@ namespace DDSTP.Test
 
         }
 
-        [TestMethod]
-        public void POIComparerShopPOI()
-        {
-            var rubro = new Category();
-            rubro.DistanceLess = 800;
 
-            var poi1 = new ShopPOI();
-            poi1.Geolocation = GeoHelper.PointFromLatLng(-34.581828f, -58.412723f);
-            poi1.Category = rubro;
 
-            var result = poi1.IsNear(-34.581475f, -58.420244f);
-            //estos dos puntos se encuentran aproximadamente 670
-            //var result = comparador.AreNear(poi1, -34.581475f, -58.420244f);
-
-            Assert.IsTrue(result);
-
-        }
 
         [TestMethod]
         public void AvaibilityShopPOI()

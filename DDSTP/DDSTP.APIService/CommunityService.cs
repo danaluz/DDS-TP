@@ -15,7 +15,7 @@ namespace DDSTP.APIService
 
         public List<CSVCommunityData> GetAllCommunities()
         {
-            var csv = GetCSV(UrlService);
+            var csv = Properties.Resources.comunas; //GetCSV(UrlService);
             var lista = new List<CSVCommunityData>();
 
             //separa las lineas del archivo CSV completo, que ya estaba en csv.

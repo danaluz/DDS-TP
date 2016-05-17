@@ -14,5 +14,6 @@ namespace DDSTP.Domain
         public abstract TypeOfPOI Type { get; }
         public abstract bool IsNear(double lat, double lon);
         public abstract bool IsAvailable();
+        public abstract bool IsContained(string filter);
     }
 }

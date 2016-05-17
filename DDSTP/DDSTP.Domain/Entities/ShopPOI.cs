@@ -43,5 +43,10 @@ namespace DDSTP.Domain
 
             return result;
         }
+
+        public override bool IsContained(string filter)
+        {
+            return Name.Contains(filter) || Category.Name.Contains(filter);
+        }
     }
 }

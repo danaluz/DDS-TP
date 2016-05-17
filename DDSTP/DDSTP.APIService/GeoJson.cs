@@ -35,7 +35,7 @@ namespace DDSTP.APIService
             //chequeo si los primeros y los últimos son iguales, sino se agrega
             var first = list.First();
             var last = list.Last();
-
+            //uso Equals por ser valores double
             if (!first.Longitude.Equals(last.Longitude) || !first.Latitude.Equals(last.Latitude))
             {
                 list.Add(first);
