@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using DDSTP.Domain.Entities;
 
 namespace DDSTP.Domain
@@ -15,7 +16,9 @@ namespace DDSTP.Domain
             this.Availabilities = new List<Availability>();
         }
 
-
+        [ForeignKey("Category")]
+        public int CategoryID { get; set; }
+      
         public virtual Category Category { get; set; }
         public virtual List<Availability> Availabilities { get; set; }
 

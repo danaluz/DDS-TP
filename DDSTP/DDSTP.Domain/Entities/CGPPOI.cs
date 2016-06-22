@@ -39,6 +39,7 @@ namespace DDSTP.Domain
         
         public override bool IsContained(string filter)
         {
+            //ejecutar load
             return Name.Contains(filter) || Services.Any(x => x.ServiceName.Contains(filter));
         }
 

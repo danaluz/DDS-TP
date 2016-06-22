@@ -64,6 +64,10 @@
     <Compile Include="TestApiService.cs" />
     <Compile Include="IsNearTests.cs" />
     <Compile Include="AvabilitiyTests.cs" />
+    <Compile Include="TestABM.cs" />
+    <Compile Include="UnitTest2.cs" />
+    <Compile Include="UseCase2.cs" />
+    <Compile Include="UseCase1.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDSTP.APIService\DDSTP.APIService.csproj">
@@ -77,6 +81,10 @@
     <ProjectReference Include="..\DDSTP.Domain\DDSTP.Domain.csproj">
       <Project>{35cc10ee-6707-4855-937f-a65d3931c075}</Project>
       <Name>DDSTP.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDSTP.Proxies\DDSTP.Proxies.csproj">
+      <Project>{e3935868-9055-4bc4-a9bf-7699d744bfff}</Project>
+      <Name>DDSTP.Proxies</Name>
     </ProjectReference>
     <ProjectReference Include="..\DDSTP.Repositories\DDSTP.Repositories.csproj">
       <Project>{33B498F7-C10F-4E45-A3B1-052A5C6D9E7A}</Project>

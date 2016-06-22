@@ -39,6 +39,7 @@ namespace DDSTP.Data
             modelBuilder.Entity<BankPOI>().ToTable("BankPOIs");
             modelBuilder.Entity<BusStopPOI>().ToTable("BusStopPOIs");
             modelBuilder.Entity<CGPPOI>().ToTable("CGPPOI");
+            ShopPOIMap.Map(modelBuilder);
         }
 
         public class EntitiesContextInitializer : DropCreateDatabaseIfModelChanges<dbDDSTPContext>
@@ -115,7 +116,7 @@ namespace DDSTP.Data
                 var av1 = new Availability();
                 av1.OpenTime = new TimeSpan(0, 0, 0);
                 av1.CloseTime = new TimeSpan(23, 59, 59);
-                av1.Day = DayOfWeek.Tuesday;
+                av1.Day = DayOfWeek.Wednesday;
                 
                 //Un Servicio, para ser utilizado por un CGP
                 var service1 = new Service();
