@@ -10,15 +10,33 @@ namespace DDSTP.Domain
 {
     public class CGPPOI : POI
     {
-        public CGPPOI()
+          public CGPPOI()
         {
-            this.Services = new List<Service>();
+            CGPServiceAvailabilities = new List<CGPServiceAvailability>();
         }
 
-        public virtual Community Community { get; set; }
-            
-        public virtual List<Service> Services { get; set; }
+        public virtual List<ServiceDTO> Services
+        {
+            get
+            {
+                var services = CGPServiceAvailabilities.Select(x => x.Service);
 
+                var result = new List<ServiceDTO>();
+                foreach (var service in services)
+                {
+                    var avaibilities = CGPServiceAvailabilities.Where(x => x.ServiceId == service.ID).Select(y => y.Availability).ToList();
+                    var item = new ServiceDTO(service, avaibilities);
+                    result.Add(item);
+                }
+
+                return result;
+            }
+        }
+
+        public virtual List<CGPServiceAvailability> CGPServiceAvailabilities { get; set; }
+        
+        public virtual Community Community { get; set; }
+        
         public override TypeOfPOI Type
         {
             get { return TypeOfPOI.CGP;}

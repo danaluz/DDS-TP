@@ -15,6 +15,8 @@ namespace DDSTP.Data
     {
         public virtual DbSet<POI> POIs { get; set; }
         public virtual DbSet<Availability> Availabilities { get; set; }
+        public virtual DbSet<BankServiceAvailability> BankServiceAvailabilities { get; set; }
+        public virtual DbSet<CGPServiceAvailability> CgpServiceAvailabilities { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Street> Streets { get; set; }
@@ -56,11 +58,11 @@ namespace DDSTP.Data
                 //Disponibilidad de horarios para banco Santander
                 var bk1 = new Availability();
                 bk1.OpenTime = new TimeSpan(10, 0, 0);
-                bk1.CloseTime = new TimeSpan(15, 0, 0);
+                bk1.CloseTime = new TimeSpan(23, 59, 59);
                 bk1.Day = DayOfWeek.Monday;
                 var bk2 = new Availability();
-                bk2.OpenTime = new TimeSpan(10, 0, 0);
-                bk2.CloseTime = new TimeSpan(15, 0, 0);
+                bk2.OpenTime = new TimeSpan(0, 0, 0);
+                bk2.CloseTime = new TimeSpan(23, 59, 59);
                 bk2.Day = DayOfWeek.Tuesday;
                 var bk3 = new Availability();
                 bk3.OpenTime = new TimeSpan(10, 0, 0);
@@ -75,17 +77,27 @@ namespace DDSTP.Data
                 bk5.CloseTime = new TimeSpan(15, 0, 0);
                 bk5.Day = DayOfWeek.Friday;
 
+                var service1 = new Service();
+                service1.ServiceName = "depositos";
+
                 //Un Banco, con localización, calle, numero y Nombre
                 var bank1 = new BankPOI();
                 bank1.Geolocation = GeoHelper.PointFromLatLng(-34.581828f, -58.412723f);
                 bank1.MainStreet = street;
                 bank1.Number = 3669;
                 bank1.Name = "Banco Santander Río";
-                bank1.Availabilities.Add(bk1);
-                bank1.Availabilities.Add(bk2);
-                bank1.Availabilities.Add(bk3);
-                bank1.Availabilities.Add(bk4);
-                bank1.Availabilities.Add(bk5);
+                bank1.BankServiceAvaibilities.Add(new BankServiceAvailability()
+                {
+                    BankPoi = bank1,
+                    Availability = bk1,
+                    Service = service1,
+                });
+                bank1.BankServiceAvaibilities.Add(new BankServiceAvailability()
+                {
+                    BankPoi = bank1,
+                    Availability = bk2,
+                    Service = service1,
+                });
                 context.POIs.Add(bank1);
                 context.SaveChanges();
 
@@ -116,16 +128,20 @@ namespace DDSTP.Data
                 var av1 = new Availability();
                 av1.OpenTime = new TimeSpan(0, 0, 0);
                 av1.CloseTime = new TimeSpan(23, 59, 59);
-                av1.Day = DayOfWeek.Wednesday;
+                av1.Day = DayOfWeek.Tuesday;
                 
                 //Un Servicio, para ser utilizado por un CGP
-                var service1 = new Service();
-                service1.ServiceName = "asesoramiento legal";
-                service1.Availabilities.Add(av1);
+                var serviceCGP = new Service();
+                serviceCGP.ServiceName = "asesoramiento legal";
 
                 //Un CGP, con un servicio y una comunidad (la 2)
                 var poi1 = new CGPPOI();
-                poi1.Services.Add(service1);
+                poi1.CGPServiceAvailabilities.Add( new CGPServiceAvailability()
+                {
+                    CGPPoi = poi1,
+                    Availability = av1,
+                    Service = serviceCGP
+                });
                 poi1.Community = context.Communities.First();
                 poi1.Name = "CGP 2";
                 context.POIs.Add(poi1);
@@ -139,8 +155,8 @@ namespace DDSTP.Data
                 //Una disponibilidad, de las 12 de la noche a las 7 de la mañana los días Jueves
                 var av2 = new Availability();
                 av2.OpenTime = new TimeSpan(0, 0, 0);
-                av2.CloseTime = new TimeSpan(7, 0, 0);
-                av2.Day = DayOfWeek.Thursday;
+                av2.CloseTime = new TimeSpan(24, 0, 0);
+                av2.Day = DayOfWeek.Tuesday;
 
 
                 //Un Comercio, con una disponbilidad y un rubro

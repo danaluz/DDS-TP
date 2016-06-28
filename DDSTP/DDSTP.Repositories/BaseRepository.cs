@@ -18,24 +18,18 @@ namespace DDSTP.Repositories
             this.context = context;
         }
 
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
             context.Set<T>().Add(entity);
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             context.Set<T>().Attach(entity);
             context.Entry(entity).State = EntityState.Modified;
         }
 
-        public void Delete(T entity)
-        {
-            context.Set<T>().Attach(entity);
-            context.Set<T>().Remove(entity);
-        }
-
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             return context.Set<T>().Find(id);
         }

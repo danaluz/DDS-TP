@@ -48,12 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\CGPServiceAvailability.cs" />
     <Compile Include="Components\GeoHelper.cs" />
     <Compile Include="Components\Point.cs" />
     <Compile Include="Entities\Availability.cs" />
     <Compile Include="Entities\BankPOI.cs" />
+    <Compile Include="Entities\BankServiceAvailability.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Community.cs" />
+    <Compile Include="Entities\ServiceDTO.cs" />
     <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\ShopPOI.cs" />
     <Compile Include="Entities\CGPPOI.cs" />

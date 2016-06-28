@@ -10,11 +10,6 @@ namespace DDSTP.Domain.Entities
     {
         [Key]
         public int ID { get; set; }
-        public Service()
-        {
-            this.Availabilities = new List<Availability>();
-        }
         public string ServiceName  { get; set; }
-        public virtual List<Availability> Availabilities { get; set; }
     }
 }
