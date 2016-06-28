@@ -8,7 +8,7 @@ namespace DDSTP.IntegrationTest
     public class UnitTest2
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Test_ProxyBank()
         {
             var mock = BankProxyFactory.Create();
             var pepe = mock.Search("pepe", "pepita");

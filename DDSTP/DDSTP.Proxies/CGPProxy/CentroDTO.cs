@@ -11,6 +11,7 @@ namespace DDSTP.Proxies
         public CentroDTO()
         {
             zonas = new List<string>();
+            servicios = new List<ServicioDTO>();
         }
         public string domicilioCGP { get; set; }
         public string nombreDirector { get; set; }

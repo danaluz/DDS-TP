@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="POIRepository.cs" />
+    <Compile Include="ProcesarFuentesDeDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +61,10 @@
     <ProjectReference Include="..\DDSTP.Domain\DDSTP.Domain.csproj">
       <Project>{35CC10EE-6707-4855-937F-A65D3931C075}</Project>
       <Name>DDSTP.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDSTP.Proxies\DDSTP.Proxies.csproj">
+      <Project>{e3935868-9055-4bc4-a9bf-7699d744bfff}</Project>
+      <Name>DDSTP.Proxies</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
