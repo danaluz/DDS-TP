@@ -8,7 +8,7 @@ namespace DDSTP.Proxies
 {
     public static class CentroDTOFactory
     {
-        public static ObtenerDTO Create()
+        public static IObtenerDTO Create()
         {
             return new ObtenerDTOPrecargado();
         }

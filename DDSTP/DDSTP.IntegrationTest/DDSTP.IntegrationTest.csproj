@@ -59,15 +59,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SearchTests.cs" />
+    <Compile Include="Test Entrega 1\SearchTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestApiService.cs" />
-    <Compile Include="IsNearTests.cs" />
-    <Compile Include="AvabilitiyTests.cs" />
-    <Compile Include="TestABM.cs" />
-    <Compile Include="UnitTest2.cs" />
-    <Compile Include="UseCase2.cs" />
-    <Compile Include="UseCase1.cs" />
+    <Compile Include="Test Entrega 1\IsNearTests.cs" />
+    <Compile Include="Test Entrega 1\AvabilitiyTests.cs" />
+    <Compile Include="Test Entrega 2\TestABM.cs" />
+    <Compile Include="Test Entrega 2\UnitTest2.cs" />
+    <Compile Include="Test Entrega 1\UseCase2.cs" />
+    <Compile Include="Test Entrega 1\UseCase1.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDSTP.APIService\DDSTP.APIService.csproj">

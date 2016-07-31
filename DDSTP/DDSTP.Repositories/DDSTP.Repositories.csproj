@@ -48,10 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ShopPOIRepository.cs" />
+    <Compile Include="Entities Repositories\CGPPOIRepository.cs" />
+    <Compile Include="Entities Repositories\BusStopPOIRepository.cs" />
+    <Compile Include="Entities Repositories\ShopPOIRepository.cs" />
     <Compile Include="BaseWithDeleteRepository.cs" />
     <Compile Include="BaseRepository.cs" />
-    <Compile Include="BankPOIRepository.cs" />
+    <Compile Include="Entities Repositories\BankPOIRepository.cs" />
     <Compile Include="POIRepository.cs" />
     <Compile Include="ProcesarFuentesDeDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

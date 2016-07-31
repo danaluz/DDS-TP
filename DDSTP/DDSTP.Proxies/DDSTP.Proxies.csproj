@@ -50,7 +50,7 @@
     <Compile Include="BankProxy\Bank.cs" />
     <Compile Include="CGPProxy\CentroDTOFactory.cs" />
     <Compile Include="CGPProxy\CentroDTO.cs" />
-    <Compile Include="CGPProxy\ObtenerDTO.cs" />
+    <Compile Include="CGPProxy\IObtenerDTO.cs" />
     <Compile Include="CGPProxy\ObtenerDTOPrecargado.cs" />
     <Compile Include="CGPProxy\ServicioDTO.cs" />
     <Compile Include="CGPProxy\HorariosDTO.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DDSTP.Proxies
 {
-    class ObtenerDTOPrecargado: ObtenerDTO
+    class ObtenerDTOPrecargado: IObtenerDTO
     {
         public List<CentroDTO> ObtenerCentros(string location)
         {
