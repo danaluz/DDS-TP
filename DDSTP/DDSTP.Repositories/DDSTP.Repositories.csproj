@@ -54,6 +54,10 @@
     <Compile Include="BaseWithDeleteRepository.cs" />
     <Compile Include="BaseRepository.cs" />
     <Compile Include="Entities Repositories\BankPOIRepository.cs" />
+    <Compile Include="ILogManager.cs" />
+    <Compile Include="LogManager.cs" />
+    <Compile Include="UseReportRepository.cs" />
+    <Compile Include="UserRepository.cs" />
     <Compile Include="POIRepository.cs" />
     <Compile Include="ProcesarFuentesDeDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

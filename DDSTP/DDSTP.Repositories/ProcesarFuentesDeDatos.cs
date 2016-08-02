@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using DDSTP.Data;
 using DDSTP.Domain.Components;
 using DDSTP.Proxies;
@@ -14,10 +9,14 @@ namespace DDSTP.Domain
     public class ProcesarFuentesDeDatos
     {
         private readonly IBankProxy _bankProxy;
+        private readonly ILogManager _logManager;
+        private readonly User _adminUser;
 
-        public ProcesarFuentesDeDatos(IBankProxy bankProxy)
+        public ProcesarFuentesDeDatos(IBankProxy bankProxy, ILogManager logManager, User adminUser)
         {
             _bankProxy = bankProxy;
+            _logManager = logManager;
+            _adminUser = adminUser;
         }
 
         public void Procesar(string name, string service)
@@ -39,8 +38,8 @@ namespace DDSTP.Domain
                 }
                 poi.Name = b.banco;
                 poi.Geolocation = GeoHelper.PointFromLatLng(b.x, b.y);
-                
-                var repo = new POIRepository(context);
+
+                var repo = new POIRepository(context, _adminUser, _logManager);
                 if (flag)
                 {
                     repo.Add(poi);

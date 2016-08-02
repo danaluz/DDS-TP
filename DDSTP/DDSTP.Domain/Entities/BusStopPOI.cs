@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using DDSTP.Domain.Entities;
 
 namespace DDSTP.Domain
 {
@@ -17,6 +13,11 @@ namespace DDSTP.Domain
         {
             get { return TypeOfPOI.BusStop;}
             
+        }
+
+        public BusStopPOI()
+        {
+            KeyWords = new List<KeyWord>();
         }
 
         public override bool IsNear(double lat, double lon)

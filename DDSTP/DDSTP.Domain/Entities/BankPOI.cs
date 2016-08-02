@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 using DDSTP.Domain.Entities;
-using DDSTP.Proxies;
 
 namespace DDSTP.Domain
 {
@@ -16,6 +12,7 @@ namespace DDSTP.Domain
         public BankPOI()
         {
             BankServiceAvaibilities = new List<BankServiceAvailability>();
+            KeyWords = new List<KeyWord>();
         }
 
         public virtual List<ServiceDTO> Services

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using DDSTP.Domain;
 using DDSTP.Domain.Entities;
 
@@ -23,6 +18,15 @@ namespace DDSTP.Data
                     pr.ToTable("ShopPOI_Availability");
                 });
 
+            modelBuilder.Entity<ShopPOI>()
+                .HasMany<KeyWord>(s => s.KeyWords)
+                .WithMany()
+                .Map(pr =>
+                {
+                    pr.MapLeftKey("ShopPOIId");
+                    pr.MapRightKey("KeyWordId");
+                    pr.ToTable("ShopPOI_KeyWord");
+                });
         }
     }
 }

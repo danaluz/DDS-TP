@@ -1,10 +1,7 @@
 ﻿using DDSTP.Domain;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DDSTP.APIService;
 using DDSTP.Domain.Components;
 using DDSTP.Domain.Entities;
@@ -21,6 +18,9 @@ namespace DDSTP.Data
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Street> Streets { get; set; }
         public virtual DbSet<Community> Communities { get; set; }
+        public virtual DbSet<KeyWord> KeyWords { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UseReport> UseReports { get; set; }
 
         public dbDDSTPContext()
             : base("dbDDSTPContext")

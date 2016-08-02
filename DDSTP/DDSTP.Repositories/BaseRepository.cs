@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using DDSTP.Data;
 
 namespace DDSTP.Repositories
 {
     public abstract class BaseRepository<T> where T : class 
-
-{
+    {
         protected dbDDSTPContext context;
 
         protected BaseRepository(dbDDSTPContext context)
@@ -33,7 +27,5 @@ namespace DDSTP.Repositories
         {
             return context.Set<T>().Find(id);
         }
-
-
     }
 }

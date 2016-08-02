@@ -54,6 +54,8 @@
     <Compile Include="CGPProxy\ObtenerDTOPrecargado.cs" />
     <Compile Include="CGPProxy\ServicioDTO.cs" />
     <Compile Include="CGPProxy\HorariosDTO.cs" />
+    <Compile Include="EmailProxy\EmailProxy.cs" />
+    <Compile Include="EmailProxy\IEmailProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

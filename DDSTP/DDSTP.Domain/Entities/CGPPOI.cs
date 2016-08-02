@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 using DDSTP.Domain.Entities;
 
 namespace DDSTP.Domain
 {
     public class CGPPOI : POI
     {
-          public CGPPOI()
+        public CGPPOI()
         {
             CGPServiceAvailabilities = new List<CGPServiceAvailability>();
+            KeyWords = new List<KeyWord>();
         }
 
         public virtual List<ServiceDTO> Services

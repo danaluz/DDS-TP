@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using DDSTP.Domain.Entities;
 
@@ -13,7 +10,8 @@ namespace DDSTP.Domain
     {
         public ShopPOI()
         {
-            this.Availabilities = new List<Availability>();
+            Availabilities = new List<Availability>();
+            KeyWords = new List<KeyWord>();
         }
 
         [ForeignKey("Category")]
@@ -30,7 +28,7 @@ namespace DDSTP.Domain
 
         public override bool IsNear(double lat, double lon)
         {
-            var comparer = new POIComparer(this.Category.DistanceLess);
+            var comparer = new POIComparer(Category.DistanceLess);
             return comparer.AreNear(this, lat, lon);
         }
 
@@ -39,7 +37,7 @@ namespace DDSTP.Domain
             var nowTime = DateTime.Now.TimeOfDay;
             var nowDay = DateTime.Now.DayOfWeek;
 
-            var result = this.Availabilities
+            var result = Availabilities
                             .Any(x => nowTime >= x.OpenTime && 
                                       nowTime < x.CloseTime && 
                                       x.Day == nowDay);

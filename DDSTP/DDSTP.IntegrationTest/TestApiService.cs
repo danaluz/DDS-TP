@@ -1,5 +1,4 @@
-﻿using System;
-using DDSTP.APIService;
+﻿using DDSTP.APIService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DDSTP.IntegrationTest
