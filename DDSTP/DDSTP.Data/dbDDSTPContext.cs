@@ -167,7 +167,7 @@ namespace DDSTP.Data
 
                 //Un Comercio, con una disponbilidad y un rubro
                 var shop1 = new ShopPOI();
-                shop1.Name = "Librería Pepito";
+                shop1.Name = "Libreria Pepito";
                 shop1.Geolocation = GeoHelper.PointFromLatLng(-34.581828f, -58.412723f);
                 shop1.Category = rubro;
                 shop1.Availabilities.Add(av1);
@@ -184,9 +184,24 @@ namespace DDSTP.Data
 
                 var user = new User();
                 user.UserType = UserType.Terminal;
-                user.Name = "Terminal Dana";
+                user.Name = "Terminal Abasto";
+                user.AddAction("ChangeFontSize");
 
                 context.Users.Add(user);
+                context.SaveChanges();
+
+                var userM = new User();
+                userM.UserType = UserType.Terminal;
+                userM.Name = "Terminal Medrano";
+                userM.AddAction("ChangeFontSize");
+
+                context.Users.Add(userM);
+                context.SaveChanges();
+
+                var userAdmin = new User();
+                userAdmin.UserType = UserType.Administrator;
+                userAdmin.Name = "Admin";
+                context.Users.Add(userAdmin);
                 context.SaveChanges();
             }
         }

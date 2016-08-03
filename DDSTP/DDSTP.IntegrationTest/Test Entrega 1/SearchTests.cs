@@ -11,7 +11,7 @@ namespace DDSTP.IntegrationTest
         [TestMethod]
         public void Search_InName()
         {
-            //UserRepository.CurrentUserId = 1;
+            UserRepository.CurrentUserId = 1;
 
             const int configWarningSeconds = 0;
 
@@ -33,7 +33,7 @@ namespace DDSTP.IntegrationTest
         [TestMethod]
         public void Search_Number()
         {
-            //UserRepository.CurrentUserId = 1;
+           UserRepository.CurrentUserId = 1;
             const int configWarningSeconds = 30;
             var logManager = new LogManager(new EmailProxy(), configWarningSeconds);
 
@@ -53,7 +53,7 @@ namespace DDSTP.IntegrationTest
         [TestMethod]
         public void Search_ServiceCGP()
         {
-            //UserRepository.CurrentUserId = 1;
+            UserRepository.CurrentUserId = 2;
             const int configWarningSeconds = 30;
             var logManager = new LogManager(new EmailProxy(), configWarningSeconds);
 
@@ -73,7 +73,7 @@ namespace DDSTP.IntegrationTest
         [TestMethod]
         public void Search_CategoryShop()
         {
-            //UserRepository.CurrentUserId = 1;
+            UserRepository.CurrentUserId = 2;
             const int configWarningSeconds = 30;
             var logManager = new LogManager(new EmailProxy(), configWarningSeconds);
 

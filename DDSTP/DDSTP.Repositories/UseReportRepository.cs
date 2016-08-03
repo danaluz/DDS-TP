@@ -37,7 +37,7 @@ namespace DDSTP.Repositories
                           where x.UserID == userTerminalId && x.User.UserType == UserType.Terminal
                             select new UseReportPartialByTerminalDto()
                             {
-                                Count = x.ResultsCount
+                                Count = x.ResultsCount,
                             }).ToList();
 
             return result;
@@ -51,7 +51,7 @@ namespace DDSTP.Repositories
                             select new UseReportByTerminalDto()
                             {
                                 UserId = g.Key,
-                                UserName = g.First().User.Name,
+                                UserName = g.FirstOrDefault().User.Name,
                                 Count = g.Sum(y=>y.ResultsCount)
                             }).ToList();
 
