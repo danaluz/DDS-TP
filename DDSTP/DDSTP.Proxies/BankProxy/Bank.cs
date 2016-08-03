@@ -2,9 +2,9 @@
 
 namespace DDSTP.Proxies
 {
-    public class Bank
+    public class BankInfo
     {
-        public Bank()
+        public BankInfo()
         {
             servicios = new List<string>();
         }

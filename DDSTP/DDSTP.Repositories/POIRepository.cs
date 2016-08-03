@@ -6,7 +6,7 @@ using DDSTP.Domain;
 
 namespace DDSTP.Repositories
 {
-    public class POIRepository : BaseRepository<POI>
+    public class POIRepository : BaseWithDeleteRepository<POI>
     {
         private readonly User _loggedInUser;
         private readonly ILogManager _log;
@@ -57,6 +57,23 @@ namespace DDSTP.Repositories
             _log.LogSearch(context, _loggedInUser, string.Format("latitude:{0} - longitude:{1}", lat, lng), watch.Elapsed, result.Count);
 
             return result;
-        } 
+        }
+
+        public List<ShopPOI> GetAllShops()
+        {
+            var result = (from x in context.POIs.OfType<ShopPOI>()
+                          select x).ToList();
+
+            return result;
+        }
+
+        public ShopPOI GetShopByName(string name)
+        {
+            var result = (from x in context.POIs.OfType<ShopPOI>()
+                            where x.Name == name
+                            select x).FirstOrDefault();
+
+            return result;
+        }
     }
 }

@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CommandExecutor.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\MultiCommand.cs" />
+    <Compile Include="Commands\RemovePOICommand.cs" />
+    <Compile Include="Commands\UpdateShopsCommand.cs" />
+    <Compile Include="Commands\CreateTerminalAbastoCommand.cs" />
     <Compile Include="Entities Repositories\CGPPOIRepository.cs" />
     <Compile Include="Entities Repositories\BusStopPOIRepository.cs" />
     <Compile Include="Entities Repositories\ShopPOIRepository.cs" />
@@ -56,6 +62,7 @@
     <Compile Include="Entities Repositories\BankPOIRepository.cs" />
     <Compile Include="ILogManager.cs" />
     <Compile Include="LogManager.cs" />
+    <Compile Include="UserActions\UserActionRepository.cs" />
     <Compile Include="UseReportRepository.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="POIRepository.cs" />

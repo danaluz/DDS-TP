@@ -4,6 +4,6 @@ namespace DDSTP.Proxies
 {
     public interface IBankProxy
     {
-        List<Bank> Search(string name, string service);
+        List<BankInfo> Search(string name, string service);
     }
 }

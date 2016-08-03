@@ -4,14 +4,14 @@ namespace DDSTP.Proxies
 {
     public class BankProxyMock : IBankProxy
     {
-        public List<Bank> Search(string name, string service)
+        public List<BankInfo> Search(string name, string service)
         {
             return MockList();
         }
 
-        private List<Bank> MockList()
+        private List<BankInfo> MockList()
         {
-            var bank1 = new Bank();
+            var bank1 = new BankInfo();
             bank1.banco = "Banco de la Plaza";
             bank1.x = -35.9338322f;
             bank1.y = 72.348353f;
@@ -26,7 +26,7 @@ namespace DDSTP.Proxies
             bank1.servicios.Add("");
             bank1.servicios.Add("");
 
-            var bank2 = new Bank();
+            var bank2 = new BankInfo();
             bank2.banco = "Banco de la Plaza";
             bank2.x = -35.934568f;
             bank2.y = 72.34454f;
@@ -41,7 +41,7 @@ namespace DDSTP.Proxies
             bank2.servicios.Add("");
             bank2.servicios.Add("");
 
-            var list = new List<Bank>();
+            var list = new List<BankInfo>();
             list.Add(bank1);
 
             return list;

@@ -65,7 +65,7 @@ namespace DDSTP.Data
                 bk2.CloseTime = new TimeSpan(23, 59, 59);
                 bk2.Day = DayOfWeek.Tuesday;
                 var bk3 = new Availability();
-                bk3.OpenTime = new TimeSpan(10, 0, 0);
+                bk3.OpenTime = new TimeSpan(0, 0, 0);
                 bk3.CloseTime = new TimeSpan(15, 0, 0);
                 bk3.Day = DayOfWeek.Wednesday;
                 var bk4 = new Availability();
@@ -98,6 +98,12 @@ namespace DDSTP.Data
                     Availability = bk2,
                     Service = service1,
                 });
+                bank1.BankServiceAvaibilities.Add(new BankServiceAvailability()
+                {
+                    BankPoi = bank1,
+                    Availability = bk3,
+                    Service = service1,
+                });
                 context.POIs.Add(bank1);
                 context.SaveChanges();
 
@@ -128,7 +134,7 @@ namespace DDSTP.Data
                 var av1 = new Availability();
                 av1.OpenTime = new TimeSpan(0, 0, 0);
                 av1.CloseTime = new TimeSpan(23, 59, 59);
-                av1.Day = DayOfWeek.Tuesday;
+                av1.Day = DayOfWeek.Wednesday;
                 
                 //Un Servicio, para ser utilizado por un CGP
                 var serviceCGP = new Service();
@@ -156,7 +162,7 @@ namespace DDSTP.Data
                 var av2 = new Availability();
                 av2.OpenTime = new TimeSpan(0, 0, 0);
                 av2.CloseTime = new TimeSpan(24, 0, 0);
-                av2.Day = DayOfWeek.Tuesday;
+                av2.Day = DayOfWeek.Wednesday;
 
 
                 //Un Comercio, con una disponbilidad y un rubro
@@ -175,6 +181,13 @@ namespace DDSTP.Data
                 context.POIs.Add(busstop1);
                 context.SaveChanges();
 
+
+                var user = new User();
+                user.UserType = UserType.Terminal;
+                user.Name = "Terminal Dana";
+
+                context.Users.Add(user);
+                context.SaveChanges();
             }
         }
     }

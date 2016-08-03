@@ -43,6 +43,10 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
@@ -59,6 +63,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Test Entrega 4\FirstProcessUpdateShop.cs" />
     <Compile Include="Test Entrega 1\SearchTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestApiService.cs" />
@@ -68,6 +73,8 @@
     <Compile Include="Test Entrega 2\UnitTest2.cs" />
     <Compile Include="Test Entrega 1\UseCase2.cs" />
     <Compile Include="Test Entrega 1\UseCase1.cs" />
+    <Compile Include="Test Entrega 3\UseReportsTests.cs" />
+    <Compile Include="Test Entrega 4\SecondProcessRemovePOI.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDSTP.APIService\DDSTP.APIService.csproj">
@@ -95,6 +102,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
