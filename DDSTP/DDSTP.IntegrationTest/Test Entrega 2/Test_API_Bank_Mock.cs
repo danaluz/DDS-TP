@@ -4,15 +4,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DDSTP.IntegrationTest
 {
     [TestClass]
-    public class UnitTest2
+    public class Test_API_Bank_Mock
     {
         [TestMethod]
         public void Test_ProxyBank()
         {
             var mock = BankProxyFactory.Create();
-            var pepe = mock.Search("pepe", "pepita");
+            var result = mock.Search("Banco de la Plaza", "extracciones");
 
-            Assert.IsTrue(pepe.Count>0);
+            Assert.IsTrue(result.Count==2);
         }
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DDSTP.IntegrationTest
 {
     [TestClass]
-    public class UnitTest1
+    public class Search_POI_UseCase2
     {
         [TestMethod]
         public void Busqueda_POIS_por_Texto_y_Cercania()

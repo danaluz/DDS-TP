@@ -32,8 +32,8 @@ namespace DDSTP.Proxies
             RestRequest request = new RestRequest();
             request.AddParameter("domain", "sandbox2f36c1d3e8ea4eeb9529b8f5dee43f16.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
-            request.AddParameter("from", "Mailgun Sandbox <postmaster@sandbox2f36c1d3e8ea4eeb9529b8f5dee43f16.mailgun.org>");
-            request.AddParameter("to", "Dana <eci_white@hispavista.com>");
+            request.AddParameter("from", "<eci_white@hispavista.com>");
+            request.AddParameter("to", "<eci_white@hispavista.com>");
             request.AddParameter("subject", subject);
             request.AddParameter("text", content);
             request.Method = Method.POST;

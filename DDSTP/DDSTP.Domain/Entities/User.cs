@@ -27,7 +27,7 @@ namespace DDSTP.Domain
             set
             {
                 _jsonActions = value;
-                _allowedActions = JsonConvert.DeserializeObject<HashSet<string>>(value);
+                _allowedActions = JsonConvert.DeserializeObject<HashSet<string>>(value??"");
             }
         }
 

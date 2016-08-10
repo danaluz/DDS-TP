@@ -36,11 +36,13 @@ namespace DDSTP.IntegrationTest
 
             var repo = new UseReportRepository(context);
 
+            var repoUser = new UserRepository(context);
+
             var result = repo.GetPartialSearchCountByTerminal(1);
-            var userName = context.Users.Find(1).Name;
+            var userName = repoUser.GetById(1).Name;
 
             Console.WriteLine("Cantidad de Resultados Parciales");
-            Console.WriteLine(@"{0}",userName.ToString());
+            Console.WriteLine(@"{0}", userName.ToString());
             foreach (var useReportByTerminal in result)
             {
                 if (useReportByTerminal != null)
@@ -56,10 +58,10 @@ namespace DDSTP.IntegrationTest
             var repo = new UseReportRepository(context);
 
             var result = repo.GetSummarySearchCountByTerminal();
-            
+
 
             Console.WriteLine("Usuario: Cantidad de Resultados Totales");
-            
+
             foreach (var useReportByTerminal in result)
             {
                 if (useReportByTerminal != null)

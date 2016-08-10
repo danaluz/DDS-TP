@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DDSTP.IntegrationTest
 {
     [TestClass]
-    public class UseCase1
+    public class Near_POI_UseCase1
     {
         [TestMethod]
         public void Consultar_Disponibilidad_Punto_de_Interés()

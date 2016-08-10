@@ -70,11 +70,12 @@
     <Compile Include="Test Entrega 1\IsNearTests.cs" />
     <Compile Include="Test Entrega 1\AvabilitiyTests.cs" />
     <Compile Include="Test Entrega 2\TestABM.cs" />
-    <Compile Include="Test Entrega 2\UnitTest2.cs" />
-    <Compile Include="Test Entrega 1\UseCase2.cs" />
-    <Compile Include="Test Entrega 1\UseCase1.cs" />
+    <Compile Include="Test Entrega 2\Test_API_Bank_Mock.cs" />
+    <Compile Include="Test Entrega 1\Search_POI_UseCase2.cs" />
+    <Compile Include="Test Entrega 1\Near_POI_UseCase1.cs" />
     <Compile Include="Test Entrega 3\UseReportsTests.cs" />
     <Compile Include="Test Entrega 4\SecondProcessRemovePOI.cs" />
+    <Compile Include="Test Entrega 3\TestMail.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDSTP.APIService\DDSTP.APIService.csproj">

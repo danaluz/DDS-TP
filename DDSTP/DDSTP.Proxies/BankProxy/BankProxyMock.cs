@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DDSTP.Proxies
 {
@@ -6,7 +8,10 @@ namespace DDSTP.Proxies
     {
         public List<BankInfo> Search(string name, string service)
         {
-            return MockList();
+            var result = (from x in MockList()
+                where x.banco.Contains(name) && x.servicios.Any(y => y == service)
+                select x).ToList();
+            return result;
         }
 
         private List<BankInfo> MockList()
@@ -43,6 +48,7 @@ namespace DDSTP.Proxies
 
             var list = new List<BankInfo>();
             list.Add(bank1);
+            list.Add(bank2);
 
             return list;
 
